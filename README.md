@@ -1,4 +1,4 @@
-> "Oh a new project! Let's take some time to configure <insert anything about project/code management> ..."
+> "Oh a new project! Let's take some time to configure [insert anything about project/code management] ..."
 >
 > – Everyone
 
