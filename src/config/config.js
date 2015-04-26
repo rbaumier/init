@@ -2,5 +2,8 @@
 
 module.exports = {
   container: '/www',
-  bootstrap: '/www/libs/bootstrap'
+  bootstrap: '/www/libs/bootstrap',
+  args: [
+    'repo'
+  ]
 };

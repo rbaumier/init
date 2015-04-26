@@ -1,11 +1,14 @@
 'use strict';
 
-module.exports = (config, helpers) => (cli) => {
-  // all existing args
-  let args = {
-    repo: require('./repo')(config)
-  };
-
-  // args specified by users
-  let userArgs = helpers.extractArgs(cli, args);
-}
+/**
+ * required by ../init
+ * [compare valid user args with existing args and pass them to eval module]
+ * @param  {object} config
+ * @param  {object} helpers
+ * @return {void}
+ */
+module.exports = (config, helpers) => (cli, io) =>
+  require('./eval')(config, helpers)(
+    _.pick(cli, config.args),
+    io
+  );
