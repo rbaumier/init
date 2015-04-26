@@ -5,6 +5,7 @@ module.exports = (cwd) => ({
   container: '/www',
   bootstrap: '/www/libs/bootstrap',
   args: [
-    'repo'
+    'repo',
+    'open'
   ]
 });

@@ -14,6 +14,7 @@ let execute = require('./execute')(
 cli
   .version('0.0.1')
   .option('-r, --repo [url]', 'Add remote git repository')
+  .option('-o, --open <programs>', 'Open current folder with programs', helpers.split)
   .parse(process.argv);
 
 require('./args')(config, helpers)(cli, execute);

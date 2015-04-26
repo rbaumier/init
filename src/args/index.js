@@ -7,8 +7,9 @@
  * @param  {object} helpers
  * @return {void}
  */
-module.exports = (config, helpers) => (cli, execute) =>
+module.exports = (config, helpers) => (cli, execute) => {
   require('./eval')(config, helpers)(
     _.pick(cli, config.args),
     execute
   );
+}
