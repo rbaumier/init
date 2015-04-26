@@ -1,6 +1,5 @@
 'use strict';
 
-let exec = require('child_process').exec;
 let command = 'git remote add origin ';
 
 /**
@@ -10,8 +9,5 @@ let command = 'git remote add origin ';
  * @param  {string} value  [agument value]
  * @return {void}
  */
-module.exports = (config, value, io) =>
-  // todo: check if user has git
-  exec(command + value, (error, stdout, stderr) =>
-    io(error || stderr || stdout)
-  );
+module.exports = (config, value, execute) =>
+  execute(command + value);
