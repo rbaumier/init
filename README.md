@@ -1,14 +1,57 @@
-- command: init
-- params: repo git
-- default:
-    repo container -> /www
-    dotfiles -> /www/libs/dotfiles
-- programs to open:
-    sublime text
-    source tree
-- add license
-- add package.json
+> "Oh a new project! Let's take some time to configure <insert anything about project/code management> ..."
+>
+> – Everyone
 
-evolutions:
-- predefined params via json
-- params: -l language, -ide, license type
+<p align="center">
+  <img src="./docs/haha-no.gif"/>
+</p>
+
+# Usage
+```
+npm install repo-init -g
+cd /path/to/project
+project-init
+```
+
+# Options
+```
+Usage: project-init [options]
+
+Options:
+
+  -f, --file <cfgfile>    add your own configuration file
+  -r, --repo <url>        init & clone a git repository
+
+Examples:
+
+  $ project-init -f config.json
+  $ project-init -r git@github.com:rbaumier/project-init.git
+```
+
+# Configuration
+It contains every action you want to perform. If configuration file is not defined, we'll look into configurations/config.json.
+
+```
+{
+  // copy content of a folder into project, you need to specify its path
+  folder: String,
+
+  // execute each command into folder
+  commands: Array,
+
+  // create a README and append license at the end
+  license: {
+    // MIT, ISC...
+    type: String,
+
+    // The license file path, it'll be added at the end of the README
+    file: String
+  },
+
+  // create a package.json with folder name, license if specified
+  package: {
+    // path to predefined package.json file, if not specified (e.g. package: {}), a default will be created with
+    // folder as name, session user as author and license if specified.
+    file: String
+  }
+}
