@@ -31,7 +31,7 @@ Examples:
 # Configuration
 It contains every action you want to perform. If configuration file is not defined, we'll first look into configurations/user/config.json, then configurations/default/config.json. Do not modify the default config.json, it'll be overrided in case of update.
 
-```
+``` javascript
 {
   // copy content of a folder into project, you need to specify its path
   folder: String,
