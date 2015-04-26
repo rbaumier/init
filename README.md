@@ -10,4 +10,5 @@
 - add package.json
 
 evolutions:
+- predefined params via json
 - params: -l language, -ide, license type

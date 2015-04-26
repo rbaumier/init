@@ -1,6 +1,6 @@
 'use strict';
 
-let command = 'git remote add origin ';
+let command = 'git init && git remote add origin ';
 
 /**
  * required by eval.js
