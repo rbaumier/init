@@ -10,14 +10,12 @@
 ```
 npm install project-init -g
 cd /path/to/project
-project-init
+project-init [options]
 ```
 
 # Options
 ```
-Usage: project-init [options]
-
-Options:
+Available:
 
   -f, --file <cfgfile>    add your own configuration file
   -r, --repo <url>        init & clone a git repository
@@ -29,29 +27,32 @@ Examples:
 ```
 
 # Configuration
-It contains every action you want to perform. If configuration file is not defined, we'll first look into configurations/user/config.json, then configurations/default/config.json. Do not modify the default config.json, it'll be overrided in case of update.
+It contains every action you want to perform. If configuration file is not defined, we'll first look into configurations/user/config.json, then configurations/default/config.json. Do not modify the default config.json, it'll be erased in case of update.
 
-``` javascript
+```javascript
 {
   // copy content of a folder into project, you need to specify its path
-  folder: String,
+  "folder": String,
 
   // execute each command into folder
-  commands: Array,
+  "commands": Array,
 
   // Add the license
-  license: {
+  "license": {
     // MIT, ISC...
-    type: String,
+    "type": String,
 
     // The license file path, it'll be added at the end of the README
-    file: String
+    "file": String
   },
 
   // create a package.json with folder name, license if specified
-  package: {
+  "package": {
     // path to predefined package.json file, if not specified (e.g. package: {}), a default will be created with
     // folder as name, session user as author and license (if specified).
-    file: String
+    "file": String,
+
+    // npm modules you want to install
+    "dependencies": {}
   }
 }

@@ -15,4 +15,4 @@ cli
   .option('-f, --file <filecfg>', 'Specify configuration file to use only this time')
   .parse(process.argv);
 
-require('./args')(config, helpers)(cli, execute);
+require('./commands')(config, helpers)(cli, execute);
