@@ -12,4 +12,4 @@ module.exports = (config, helpers) => (cli, execute) => {
     _.pick(cli, config.args),
     execute
   );
-}
+};

@@ -1,0 +1,10 @@
+// This is the default package file, do not modify it,
+// it'll be overrided if you update,
+// if you want a specific configuration, create a config.json file into ../user
+{
+  // path of bootstrap content to copy it into project
+  "folder": "",
+
+  // execute each command into folder
+  "commands": []
+}
