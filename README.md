@@ -8,7 +8,7 @@
 
 # Usage
 ```
-npm install repo-init -g
+npm install project-init -g
 cd /path/to/project
 project-init
 ```
@@ -29,7 +29,7 @@ Examples:
 ```
 
 # Configuration
-It contains every action you want to perform. If configuration file is not defined, we'll look into configurations/config.json.
+It contains every action you want to perform. If configuration file is not defined, we'll first look into configurations/user/config.json, then configurations/default/config.json. Do not modify the default config.json, it'll be overrided in case of update.
 
 ```
 {
@@ -39,7 +39,7 @@ It contains every action you want to perform. If configuration file is not defin
   // execute each command into folder
   commands: Array,
 
-  // create a README and append license at the end
+  // Add the license
   license: {
     // MIT, ISC...
     type: String,
@@ -51,7 +51,7 @@ It contains every action you want to perform. If configuration file is not defin
   // create a package.json with folder name, license if specified
   package: {
     // path to predefined package.json file, if not specified (e.g. package: {}), a default will be created with
-    // folder as name, session user as author and license if specified.
+    // folder as name, session user as author and license (if specified).
     file: String
   }
 }
