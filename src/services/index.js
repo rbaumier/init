@@ -7,6 +7,6 @@
  * @param  {object} helpers
  * @return {void}
  */
-module.exports = (helpers) => (cli, execute, nodeinitFile) => {
-  require('./eval')(helpers)(nodeinitFile, execute)
+module.exports = (helpers) => (cli, exec, nodeinitFile) => {
+  require('./eval')(helpers)(nodeinitFile, exec)
 };

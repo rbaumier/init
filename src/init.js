@@ -3,12 +3,12 @@
 'use strict';
 
 let path = require('path');
-var fs = require('fs');
+let fs = require('fs');
 let cli = require('commander');
 let cwd = process.cwd();
 let cp = require('child_process');
 let helpers = require('./helpers');
-let execute = helpers.execute(cwd, cp.exec, console.log);
+let exec = helpers.execute(cwd, cp.exec, console.log);
 let config = require('./config');
 let nodeinitFile;
 
@@ -19,13 +19,15 @@ cli
   .option('-f, --file <filecfg>', 'Specify configuration file to use only this time')
   .parse(process.argv);
 
-// check if .nodeinit is defined, if not take the default one
 async.filter([
-  // TODO: search first into --file <FILE>
-  path.resolve(process.cwd(), './.nodeinit'),
-  path.resolve(process.cwd(), './default/.nodeinit')
+  cli.file,
+  path.resolve(process.cwd(), './.nodeinit')
 ], fs.exists, (filepath) => {
-  helpers.read(fs, _.first(filepath), (initFile) => {
+  if(!filepath[0]) {
+    console.error('no configuration file specified, please add one with -f or directly in node-init/.nodeinit');
+    process.exit(1);
+  }
+  helpers.read(fs, filepath[0], (initFile) => {
     try {
       nodeinitFile = JSON.parse(initFile);
     } catch(err) {
@@ -34,7 +36,7 @@ async.filter([
     }
     require('./services')(helpers)(
       cli,
-      execute,
+      exec,
       _.extend(nodeinitFile, _.pick(cli, config.cli.services))
     );
   });
