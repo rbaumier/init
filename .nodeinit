@@ -1,0 +1,7 @@
+{
+  "folder": "/www/libs/bootstrap/dotfiles",
+  "commands": ["subl", "stree"],
+  "package": {
+    "dependencies": null
+  }
+}

@@ -32,7 +32,7 @@ It contains every action you want to perform. If configuration file is not defin
 ```javascript
 {
   // copy content of a folder into project, you need to specify its path
-  "folder": String,
+  "folders": Array,
 
   // execute each command into folder
   "commands": Array,

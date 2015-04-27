@@ -7,6 +7,6 @@
  * @param  {string} path   [the user config file]
  * @return {void}
  */
-module.exports = (config, path, execute) => {
-  // todo: get and parse config file
+module.exports = (execute) => {
+
 }
