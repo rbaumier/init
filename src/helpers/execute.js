@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = (config, exec, logger) => (command) =>
-  exec(`(cd ${config.cwd}; ${command})`, (error, stdout, stderr) =>
+module.exports = (cwd, exec, logger) => (command) =>
+  exec(`(cd ${cwd}; ${command})`, (error, stdout, stderr) =>
     logger(error || stderr || stdout)
   );
 

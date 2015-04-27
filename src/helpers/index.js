@@ -2,5 +2,6 @@
 
 module.exports = {
   execute: require('./execute'),
-  split: require('./split')
+  split: require('./split'),
+  read: require('./read')
 };

@@ -6,8 +6,8 @@
  * @param  {object} config
  * @return {void}
  */
-module.exports = (config, helpers) => (args, execute) =>
+module.exports = (helpers) => (args, execute) =>
   _.forEach(args, (value, arg) =>
-    require('./' + arg)(config, value, execute)
+    require('./' + arg)(value, execute)
   );
 

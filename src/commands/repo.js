@@ -9,5 +9,5 @@ let command = 'git init && git remote add origin ';
  * @param  {string} value  [agument value]
  * @return {void}
  */
-module.exports = (config, value, execute) =>
+module.exports = (value, execute) =>
   execute(command + value);
