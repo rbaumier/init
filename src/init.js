@@ -10,7 +10,6 @@ let cp = require('child_process');
 let helpers = require('./helpers');
 let exec = helpers.execute(cwd, cp.exec, console.log);
 let config = require('./config');
-let nodeinitFile;
 
 // initialize cli
 cli
@@ -29,7 +28,7 @@ async.filter([
   }
   helpers.read(fs, filepath[0], (initFile) => {
     try {
-      nodeinitFile = JSON.parse(initFile);
+      var nodeinitFile = JSON.parse(initFile);
     } catch(err) {
       console.error('cannot parse configuration file:', err);
       process.exit(1);
@@ -41,11 +40,3 @@ async.filter([
     );
   });
 });
-
-// execute commands depending on configuration
-
-// regarder si -f est précisé, si oui on va chercher le fichier du path et on le parse
-// sinon on va regarder si config.json existe dans configurations/user
-// sinon on affiche un message "no configuration file, please create /path/to/config.json or specify a configuration file with -f <cfgfile> option"
-
-// parser le config.json avec

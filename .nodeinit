@@ -1,6 +1,6 @@
 {
   "folders": ["/www/libs/bootstrap/dotfiles"],
-  "commands": ["subl", "stree"],
+  "commands": ["subl .", "stree ."],
   "package": {
     "dependencies": null
   }
