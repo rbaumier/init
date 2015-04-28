@@ -1,5 +1,7 @@
 'use strict';
 
-module.exports = (args, exec) => {
+module.exports = (commands, exec) =>
+  _.forEach(commands, command =>
+    exec(command)
+  );
 
-}

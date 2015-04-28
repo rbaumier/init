@@ -1,5 +1,7 @@
 'use strict';
 
-module.exports = (args, exec) => {
+module.exports = (folders, exec) =>
+  _.forEach(folders, folder =>
+    exec('cp ${folder}/* .'
+  ));
 
-}
